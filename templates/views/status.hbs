@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  {{> head }}
+
+
+  <body>
+
+
+    {{> menu }}
+
+    <!--Menu goes here-->
+
+      <div class="slim-mainpanel">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card card-profile">
+                <div class="card-body">
+                  <div class="media">
+                    <img src="{{Application.image}}" alt="image">
+                    <div class="media-body">
+                      <h3 class="card-profile-name">{{Application.firstName}} {{Application.otherName}} {{Application.lastName}}</h3>
+                <div class= "row">
+                    <div class="col-lg-3 col-sm-12 media mg-t-25">
+                        <div><i class="icon ion-ios-telephone-outline tx-24 lh-0"></i></div>
+                        <div class="media-body mg-l-15 mg-t-4">
+                        <h6 class="tx-14 tx-gray-700">Phone Number</h6>
+                        <span class="d-block">{{Application.phone}}</span>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                    <div class="col-lg-3 col-sm-12 media mg-t-25">
+                        <div><i class="icon ion-ios-email-outline tx-24 lh-0"></i></div>
+                        <div class="media-body mg-l-15 mg-t-4">
+                        <h6 class="tx-14 tx-gray-700">Email Address</h6>
+                        <span class="d-block">{{Application.email}}</span>
+                        </div><!-- media-body -->
+                    </div><!-- media -->
+                    <div class="col-lg-5 col-sm-12 mg-t-25">
+                        <a target="_blank" href="/printproof" class="btn btn-lg btn-success btn-block mg-b-10"><i class="fa fa-download mg-r-5"></i>Proof of Application</a>
+                    </div>
+                </div>     
+                </div><!-- media-body -->
+                  </div><!-- media -->
+                </div><!-- card-body -->
+              </div><!-- card -->              
+              
+
+            </div><!-- col-12 -->
+          </div><!-- row -->
+            <div class="row row-sm">
+                <div class="col-lg-8 col-sm-12 mg-t-25">
+                    <div class="section-wrapper">
+                        <label class="section-title">selected Programmes</label>
+                            <ul class="list-group col-12">
+                            {{#each Application.programs}}
+                            <li class="list-group-item">
+                                <p class="mg-b-0"><strong class="tx-inverse tx-medium">{{this}}</strong></p>
+                            </li>
+                             {{/each}}
+                            </ul>
+                    </div><!-- section -->
+                </div>   
+
+                <div class="col-lg-4 col-sm-12 mg-t-20 mg-lg-t-25">
+                    <div class="section-wrapper">
+                        <label class="section-title text-center">Application Status</label>
+                        <div class="row text-center">
+                        <button class="btn btn-lg btn-info btn-block mg-b-10">Pending</button>
+                        </div><!--row -->
+                    </div><!-- section -->
+                </div>
+
+
+            </div><!--row-->
+
+        </div><!-- container -->
+
+        <div class="slim-footer mg-t-0">
+          <div class="container-fluid">
+            <p>Copyright 2020 &copy; All Rights Reserved</p>
+            <p>Designed & Developed by: <a href="https://thejooankrah.com">The Jooankrah</a></p>
+          </div><!-- container-fluid -->
+        </div><!-- slim-footer -->
+      </div><!-- slim-mainpanel -->
+    </div><!-- slim-body -->
+
+     <!--Scripts goes here-->
+    {{> scripts }}
+  </body>
+</html>

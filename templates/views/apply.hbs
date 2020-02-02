@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  {{> head }}
+
+
+  <body>
+
+
+    {{> menu }}
+
+    <!--Menu goes here-->
+
+      <div class="slim-mainpanel">
+        <div class="container">
+          <!-- <div class="slim-pageheader">
+            
+          </div> --><!-- slim-pageheader -->
+
+          <div class="section-wrapper mg-t-20">
+            <label class="section-title">Vertical Orientation Wizard</label>
+            <p class="mg-b-20 mg-sm-b-40">A basic content wizard with vertical orientation.</p>
+
+            <form id="form" action="/applicant/apply" method="POST" enctype="multipart/form-data">
+            <div id="wizard3">
+              <h3>Personal Information</h3>
+              <section>
+                <h4>Enter your Personal Details</h4>
+                <div class="row mg-b-10 mg-t-20">
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label">Firstname: <span class="tx-danger">*</span></label>
+                      <input class="form-control" type="text" name="firstname"  placeholder="Enter firstname" required>
+                    </div>
+                  </div><!-- col-4 -->
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label">Lastname: <span class="tx-danger">*</span></label>
+                      <input class="form-control" type="text" name="lastname"placeholder="Enter lastname" requied>
+                    </div>
+                  </div><!-- col-4 -->
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label">Other Name(s):</label>
+                      <input class="form-control" type="text" name="othername"  placeholder="Enter your other name(s)" >
+                    </div>
+                  </div><!-- col-4 -->  
+                </div><!-- row -->
+
+                <div class="row mg-b-10">
+                  <div class="col-lg-6">
+                    <div class="form-group mg-b-10-force">
+                      <label class="form-control-label">Date of birth: <span class="tx-danger">*</span></label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text">
+                              <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                            </div>
+                          </div>
+                          <input name="dob" type="text" class="form-control fc-datepicker" placeholder="MM/DD/YYYY">
+                        </div>
+                </div>
+                  </div><!-- col-6 -->
+                  <div class="col-lg-6">
+                    <div class="form-group mg-b-10-force">
+                      <label class="form-control-label">Sex: <span class="tx-danger">*</span></label>
+                      <select name ="sex" class="form-control select2" data-placeholder="Choose sex">
+                        <option label="Choose sex"></option>
+                        <option value="Male">Male</option>
+                        <option value="Male">Female</option>
+                      </select>
+                    </div>
+                  </div><!-- col-6 -->
+                </div><!-- row -->
+
+                <div class="row mg-b-10">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label">Phone: <span class="tx-danger">*</span></label>
+                      <input class="form-control" type="text" name="phone"  placeholder="Phone" required>
+                    </div>
+                  </div><!-- col-6 -->
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label">E-mail: <span class="tx-danger">*</span></label>
+                      <input class="form-control" type="e-mail" name="email" placeholder="Enter your E-mail here" required>
+                    </div>
+                  </div><!-- col-6 -->
+                </div><!-- row -->
+
+                <div class="row mg-b-10">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label">Place of Birth: <span class="tx-danger">*</span></label>
+                      <input class="form-control" type="text" name="pob" placeholder="Place of birth" required>                    
+                  </div>
+                  </div><!-- col-6 -->
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label">Nationality: <span class="tx-danger">*</span></label>
+                      <select name="nationality" class="form-control select2 countrylist">
+                        <option></option>
+                      </select>                   
+                     </div>
+                  </div><!-- col-6 --> 
+                </div><!-- row -->
+
+                <div class="row mg-t-10">
+                  <div class="col-6">
+                    <label class="form-control-label">Marital Status: <span class="tx-danger">*</span></label>
+                  </div>
+                </div>
+                <div class="row mg-t-10">
+                  <div class="col-lg-4">
+                    <label class="rdiobox">
+                      <input name="maritalStatus" value="Single" type="radio">
+                      <span>Single</span>
+                    </label>
+                  </div><!-- col-4 -->
+                  <div class="col-lg-4">
+                    <label class="rdiobox">
+                      <input name="maritalStatus" value="Married" type="radio">
+                      <span>Married</span>
+                    </label>
+                  </div><!-- col-4 -->
+                  <div class="col-lg-4 ">
+                    <label class="rdiobox">
+                      <input name="maritalStatus" value="Divorced" type="radio">
+                      <span>Divorced</span>
+                    </label>
+                  </div><!-- col-3 -->
+                </div><!--row-->
+
+                <div class="row mg-t-10">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label">Number of children:</label>
+                      <input class="form-control" type="text" name="children"  placeholder="Number of children" required>
+                    </div>
+                  </div><!-- col-6 -->
+                </div><!--row--> 
+
+    
+                  </section>
+
+
+              <h3>Add Address</h3>
+              <section>
+               <h4>Add your personal address here</h4>
+                <div class="row mg-b-10 mg-t-20">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label class="form-control-label">Address: <span class="tx-danger">*</span></label>
+                      <input class="form-control" type="text" name="address[box]"  placeholder="address" required>
+                    </div>
+                  </div><!-- col-12 -->
+                </div><!-- row -->
+                <div class="row mg-b-10">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label">City: <span class="tx-danger">*</span></label>
+                      <input class="form-control" type="text" name="address[city]"  placeholder="City" required>
+                    </div>
+                  </div><!-- col-6 -->
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label">Country: <span class="tx-danger">*</span></label>  
+                      <select name="address[country]" class="form-control select2 countrylist" >
+                      <option></option>>
+                    </select>
+                    </div>
+                  </div><!-- col-6 -->
+                </div><!-- row -->
+              </section>
+
+
+              <h3>Guardian</h3>
+
+              <section>
+                <h4>Add your Guardian's details here</h4>
+                <div class="row mg-b-10 mg-t-20">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label class="form-control-label">Name: <span class="tx-danger">*</span></label>
+                      <input class="form-control" type="text" name="guardian[name]"  placeholder="Name of Guardian" required>
+                    </div>
+                  </div><!-- col-12 -->
+                </div><!-- row -->
+                <div class="row mg-b-10 mg-t-20">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label class="form-control-label">Address: <span class="tx-danger">*</span></label>
+                      <input class="form-control" type="text" name="guardian[address]"  placeholder="address" required>
+                    </div>
+                  </div><!-- col-12 -->
+                </div><!-- row -->
+                <div class="row mg-b-10">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label">Phone: <span class="tx-danger">*</span></label>
+                      <input class="form-control" type="text" name="guardian[phone]"  placeholder="Phone" required>
+                    </div>
+                  </div><!-- col-6 -->
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label">Occupation: <span class="tx-danger">*</span></label>
+                      <input class="form-control" type="text" name="guardian[occupation]"  placeholder="Occupation" required>
+                    </div>
+                  </div><!-- col-6 -->
+                </div><!-- row -->          
+              
+              </section>
+
+
+              <h3>Upload Photo</h3>
+
+              <section>
+                <h4>Upload passport size photo</h4>
+                <div class="container">
+                  <div class="row d-flex justify-content-center">
+                  <div class="imgUp text-center">
+                  <div class="imagePreview"></div>
+                    <label class="btn btn-primary">Select<input type="file" class="uploadFile img" name="image" value="Upload Photo" style="width: 0px;height: 0px;overflow: hidden;"></label>
+                  </div><!-- col-2 -->
+                 </div><!-- row -->
+                </div>      
+              
+              </section>
+
+
+              <h3>Results</h3>
+
+              <section>
+                <h4>Add Results</h4>
+               <div class="repeater"> 
+                <div data-repeater-list="results" >
+                <div class="data-repeater-item row mg-b-10 mg-t-20 ">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label class="form-control-label">School: <span class="tx-danger">*</span></label>
+                      <select name="results[school]" class="form-control select2" data-placeholder="Select School">
+                        <option label="Select School"></option>
+                        <option value="GHANASS">Ghana Senior High School, Koforidua</option>
+                        <option value="sUSEC">Sunyani Senior High School</option>
+                      </select>    
+                    </div>
+                  </div><!-- col-12 -->
+                </div><!-- row -->
+                <div class="data-repeater-item row mg-b-10 mg-t-20 ">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label class="form-control-label">Index Number: <span class="tx-danger">*</span></label>
+                      <input name="results[indexNumber]" class="form-control" type="text" name="Index_num"  placeholder="Index Number" required>
+                    </div>
+                  </div><!-- col-12 -->
+                </div><!-- row -->
+                <div class="data-repeater-item row mg-b-10">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label">From: <span class="tx-danger">*</span></label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                          </div>
+                        </div>
+                        <input name="results[yearStarted]" type="text" class="form-control fc-datepicker" placeholder="MM/DD/YYYY">
+                      </div>
+                    </div>
+                  </div><!-- col-6 -->
+                  <div class="data-repeater-item col-lg-6 ">
+                    <div class="form-group">
+                      <label class="form-control-label">To: <span class="tx-danger">*</span></label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
+                          </div>
+                        </div>
+                        <input name="results[yearCompleted]" type="text" class="form-control fc-datepicker" placeholder="MM/DD/YYYY">
+                      </div>
+                  </div>
+                  </div><!-- col-6 -->
+                </div><!-- row -->   
+
+                <div class="data-repeater-item row mg-b-10 ">
+                  <div class="col-md-3">
+                    <button class="btn btn-danger btn-block mg-b-10" data-repeater-delete >Delete Result</button>
+                  </div>
+
+                  <div class="col-md-3">
+                    <button class="btn btn-success btn-block mg-b-10" data-repeater-create >Add New Result</button>                                        
+                  </div>
+                </div>
+                
+                </div>
+               </div>
+              </section>
+              
+
+              <h3>Programme Choice</h3>
+
+              <section>
+                <h4>Select your Programme Choice</h4>
+                <div class="row mg-b-10 mg-t-20">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label class="form-control-label">First Choice: <span class="tx-danger">*</span></label>
+                      <select name="programs" class="form-control select2" data-placeholder="Select Programme">
+                        <option label="Select Programme"></option>
+                        <option value="CSC">BSc Computer Science</option>
+                        <option value="ACC">BA Accounting</option>
+                        <option value="CHEM">BSc Chemistry</option>
+                      </select>   
+                    </div>
+                  </div><!-- col-12 -->
+                </div><!-- row -->
+                <div class="row mg-b-10 mg-t-20">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label class="form-control-label">Second Choice: <span class="tx-danger">*</span></label>
+                      <select name="programs" class="form-control select2" data-placeholder="Select Programme">
+                        <option label="Select Programme"></option>
+                        <option value="CSC">BSc Computer Science</option>
+                        <option value="ACC">BA Accounting</option>
+                        <option value="CHEM">BSc Chemistry</option>
+                      </select>  
+                  </div>
+                  </div><!-- col-12 -->
+                </div><!-- row -->
+                <div class="row mg-b-10">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <label class="form-control-label">Third Choice: <span class="tx-danger">*</span></label>
+                      <select name="programs" class="form-control select2" data-placeholder="Select Programme">
+                        <option label="Select Programme"></option>
+                        <option value="CSC">BSc Computer Science</option>
+                        <option value="ACC">BA Accounting</option>
+                        <option value="CHEM">BSc Chemistry</option>
+                      </select>  
+                    </div>
+                  </div><!-- col-12 -->
+                </div><!-- row -->          
+              
+              </section>
+
+
+
+              <h3>Complete</h3>
+
+              <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut iaculis augue. Phasellus in semper dui, vitae venenatis nibh. Fusce mauris tortor, euismod euismod accumsan eget, finibus vel urna. Vestibulum molestie nec nisl et porttitor. Praesent fermentum ante vel urna ultrices molestie. Suspendisse facilisis quam feugiat nunc consectetur facilisis. Sed tristique neque lectus, ut consequat odio mattis dapibus. Sed volutpat imperdiet ipsum, blandit auctor sem ultricies non. Fusce quis ultrices dui.</p>
+                <p>By entering my name, I hereby declare that all information provided are true and certified.</p>
+                <div class="form-group">
+                  <input class="form-control" type="text" name="signature"  placeholder="Full Name" required>
+                </div>
+              </section>
+
+
+            </div>
+            </form>
+          </div><!-- section-wrapper -->
+
+
+        <div class="slim-footer mg-t-0">
+          <div class="container-fluid">
+            <p>Copyright 2020 &copy; All Rights Reserved.</p>
+            <p>Designed & Developed by: <a href="https://thejooankrah.com">The Jooankrah</a></p>
+          </div><!-- container-fluid -->
+        </div><!-- slim-footer -->
+      </div><!-- slim-mainpanel -->
+    </div><!-- slim-body -->
+
+
+    <!--Scripts goes here-->
+    {{> scripts }}
+
+    
+  </body>
+</html>

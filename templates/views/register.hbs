@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+    {{> head }}
+  
+    <body>
+
+    <div class="d-md-flex flex-row-reverse">
+      <div class="signin-right">
+
+        <div class="signin-box">
+          <h2 class="slim-logo">UniApp<span>.</span></h2>
+          <h2 class="signin-title-primary">Get Started!</h2>
+          <form action="/register" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name = "serial" placeholder="Serial Number" required> 
+          </div><!-- form-group -->
+          <div class="form-group">
+            <input type="password" class="form-control" name = "pin" placeholder="Pin" required>
+          </div><!-- form-group -->
+          <div class="form-group mg-b-50">
+            <select  class="form-control select2" name= "applicationType" data-placeholder="Select Programme">
+                <option label="Select Appliction Type"></option>
+                <option value="Undergraduate">Undergraduate</option>
+                <option value="Graduate">Graduate</option>
+                <option value="Matured">Matured</option>
+                <option value="Top Up">Top Up</option>
+            </select>        
+          </div><!-- form-group -->
+          <button class="btn btn-primary btn-block btn-signin">Sign In</button>
+          </form>
+          <div class="signup-separator"><span>or Returning Applicant?</span></div>
+          <a class="btn btn-primary btn-block btn-signin" href="/applicant/login">Log In</a>
+          <p class="tx-12">&copy; Copyright 2020. All Rights Reserved.</p>
+        </div>
+
+      </div><!-- signin-right -->
+      <div class="signin-left" style="background-image: url(/img/background.jpg);background-size: cover;">
+        <div class="signin-box">
+         
+        </div>
+      </div><!-- signin-left -->
+    </div><!-- d-flex -->
+
+     {{> scripts }}
+
+  </body>
+</html>

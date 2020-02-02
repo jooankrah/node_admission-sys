@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- vendor css -->
+    <link href="/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+
+    <!-- Slim CSS -->
+    <link rel="stylesheet" href="/css/slim.css">
+
+  </head>
+  <body>
+     <div class="card card-invoice">
+          <div class="card-body">
+            <div class="invoice-header">
+              <h1 class="invoice-title"></h1>
+              <div class="billed-from">
+                <p>Accra,Ghana<br>
+                Tel No: 324 445-4544<br>
+                Email: youremail@companyname.com</p>
+              </div><!-- billed-from -->
+            </div><!-- invoice-header -->
+
+            <div class="row">
+              <div class="col-sm-3 mx-auto">
+                <img src="/img/logo.png" class="img-fluid" alt="">
+              </div><!-- col -->
+            </div>
+
+            <div class="tx-center mg-t-10">
+              <h1 class="tx-inverse text-xs-center">Nsiah Institute of Technology</h1>
+            </div>
+            <div class="tx-center mg-t-10">
+              <h4 class="tx-inverse text-xs-center">Proof of Application</h4>
+            </div>
+
+            <div class="row mg-t-20">
+              <h5>Personal Information</h5>
+            <div class="col-12 media media-demo mg-t-10">
+              <img src="{{Application.image}}" class="d-flex mg-r-40 wd-150" alt="Image">
+              <div class="table-responsive">
+                <table class="table mg-b-0">
+                  <tbody>
+                    <tr>
+                      <th scope="row">First Name:</th>
+                      <td>{{Application.firstName}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Last Name:</th>
+                      <td>{{Application.lastName}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Other Name(s):</th>
+                      <td>{{Application.otherName}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Date of Birth:</th>
+                      <td>{{Application.dob}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Gender:</th>
+                      <td>{{Application.sex}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Marital Status:</th>
+                      <td>{{Application.maritalStatus}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Country:</th>
+                      <td>{{Application.nationality}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Phone:</th>
+                      <td>{{Application.phone}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">E - mail:</th>
+                      <td>{{Application.email}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Address:</th>
+                      <td>{{Application.address.box}} {{Application.address.city}} {{Application.address.country}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div><!-- media-body -->
+            </div>
+            </div>
+
+            <div class="row mg-t-20">
+              <h5>Guardian Information</h5>
+            <div class="col-12 media media-demo mg-t-10">
+              <div class="table-responsive">
+                <table class="table mg-b-0">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Name:</th>
+                      <td>{{Application.guardian.name}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Address:</th>
+                      <td>{{Application.guardian.address}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Phone:</th>
+                      <td>{{Application.guardian.phone}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Occupation:</th>
+                      <td>{{Application.guardian.occupation}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div><!-- media-body -->
+            </div>
+            </div>
+
+            <div class="row mg-t-20">
+              <h5>Programme Choice</h5>
+            <div class="col-12 media media-demo mg-t-10">
+              <div class="table-responsive">
+                <table class="table mg-b-0">
+                  <tbody>
+                    {{#each Application.programs}}
+                      <td>{{this}}</td>
+                    </tr>
+                    {{/each}}
+                  </tbody>
+                </table>
+              </div><!-- media-body -->
+            </div>
+            </div>
+
+            <div class="row mg-t-20">
+              <h5>Results</h5>
+            <div class="col-12 media media-demo mg-t-10">
+              <div class="table-responsive">
+                <table class="table table-bordered mg-b-0">
+                  <thead>
+                    <tr>
+                      <th>School</th>
+                      <th>Index Number</th>
+                      <th>Date Stated</th>
+                      <th>Date Completed</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                {{#each Application.results}}
+                      <th scope="row">{{this.school}}</th>
+                      <td>{{this.indexNumber}}</td>
+                      <td>{{this.yearStarted}}</td>
+                      <td>{{this.yearCompleted}}</td>
+                {{/each}}    
+                    </tr>
+                    </tr>
+                  </tbody>
+                </table>
+              </div><!-- media-body -->
+            </div>
+          </div>
+
+          </div><!-- card-body -->
+        </div><!-- card -->
+
+      </div><!-- container -->
+    </div><!-- slim-mainpanel -->
+
+    
+
+    <script src="/lib/jquery/js/jquery.js"></script>
+    <script src="/lib/popper.js/js/popper.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="/lib/jquery.cookie/js/jquery.cookie.js"></script>
+    <script src="/js/slim.js"></script>
+  
+  <script>
+      $(document).ready(function(){
+          window.print()
+      })
+    </script>
+  
+  </body>
+</html>
