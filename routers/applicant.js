@@ -95,7 +95,8 @@ router.get("/applicant/status",middleware.isLoggedIn,async (req, res)=>{
                                 image:'/'+req.file.filename,
                                 phone:req.body.phone,
                                 sex:req.body.sex,
-                                applicant:req.user._id
+                                applicant:req.user._id,
+                                status: "Submitted"
                         }
     //save application
     Application.create(newApplication, function(err, newlyCreated){
@@ -155,6 +156,55 @@ router.get("/logout", async (req, res) =>{
  });
 
 
+// APPLICATION EDIT ROUTE
+router.get("/application/edit",middleware.isLoggedIn,(req, res) => {
+    Application.findOne({ applicant: req.user._id}).populate("applicant").exec(function(err, foundApplication){
+        if(err){
+           return console.log(err);
+        } 
+          console.log(foundApplication)
+
+            //render edit template with that application
+     res.render("edit", {Application:foundApplication});
+    });
+ });
+ 
+ // COMMENT APPLICATION
+ router.post("/application/edit",middleware.isLoggedIn, async(req, res)=>{
+                var newUpdate = {      firstName: req.body.firstname,
+                    lastName: req.body.lastname,
+                    otherName: req.body.othername, 
+                    dob:req.body.dob,
+                    email:req.body.email,
+                    pob:req.body.pob,
+                    nationality:req.body.nationality,
+                    maritalStatus:req.body.maritalStatus,
+                    children:req.body.children,
+                    address:req.body.address,
+                    guardian:req.body.guardian,
+                    results:req.body.results,
+                    programs:req.body.programs,
+                    signature:req.body.signature,
+                    image:'/'+req.file.filename,
+                    phone:req.body.phone,
+                    sex:req.body.sex,
+                    applicant:req.user._id,
+                    status: "Submitted"
+            }
+            //save application
+            Application.findByIdAndUpdate({ applicant: req.user._id},newUpdate, function(err, updated){
+            if(err){
+            console.log(err);
+            } else {
+            //redirect to status
+            console.log(updated);
+            res.render("status",{Application:updated});
+            }
+        });
+    });
+
+
+//Print Application
 router.get('/printproof',async(req,res)=>{
     Application.findOne({ applicant: req.user._id}).populate("applicant").exec(function(err, foundApplication){
         if(err){
@@ -166,6 +216,7 @@ router.get('/printproof',async(req,res)=>{
             res.render("proof", {Application:foundApplication});
     });
 })
+
 /* router.patch('/users/me', auth, async (req, res) => {
     const updates = Object.keys(req.body)
     const allowedUpdates = ['name', 'email', 'password', 'age']

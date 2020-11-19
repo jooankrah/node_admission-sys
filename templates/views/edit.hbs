@@ -22,7 +22,7 @@
             <label class="section-title">Vertical Orientation Wizard</label>
             <p class="mg-b-20 mg-sm-b-40">A basic content wizard with vertical orientation.</p>
 
-            <form id="form" action="/applicant/apply" method="POST" enctype="multipart/form-data">
+            <form id="form" action="/application/edit" method="post" enctype="multipart/form-data">
             <div id="wizard3">
               <h3>Personal Information</h3>
               <section>
@@ -31,19 +31,19 @@
                   <div class="col-lg-4">
                     <div class="form-group">
                       <label class="form-control-label">Firstname: <span class="tx-danger">*</span></label>
-                      <input class="form-control" type="text" name="firstname"  placeholder="Enter firstname" required>
+                      <input class="form-control" type="text" name="firstname"  placeholder="Enter firstname" value="{{Application.firstName}}" required>
                     </div>
                   </div><!-- col-4 -->
                   <div class="col-lg-4">
                     <div class="form-group">
                       <label class="form-control-label">Lastname: <span class="tx-danger">*</span></label>
-                      <input class="form-control" type="text" name="lastname"placeholder="Enter lastname" requied>
+                      <input class="form-control" type="text" name="lastname"placeholder="Enter lastname" value="{{Application.lastName}}" requied>
                     </div>
                   </div><!-- col-4 -->
                   <div class="col-lg-4">
                     <div class="form-group">
                       <label class="form-control-label">Other Name(s):</label>
-                      <input class="form-control" type="text" name="othername"  placeholder="Enter your other name(s)" >
+                      <input class="form-control" type="text" name="othername"  placeholder="Enter your other name(s)" value="{{Application.otherName}}" >
                     </div>
                   </div><!-- col-4 -->  
                 </div><!-- row -->
@@ -58,7 +58,7 @@
                               <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
                             </div>
                           </div>
-                          <input name="dob" type="text" class="form-control fc-datepicker" placeholder="MM/DD/YYYY">
+                          <input name="dob" type="text" class="form-control fc-datepicker" placeholder="MM/DD/YYYY" value={{Application.dob}}>
                         </div>
                 </div>
                   </div><!-- col-6 -->
@@ -78,13 +78,13 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label">Phone: <span class="tx-danger">*</span></label>
-                      <input class="form-control" type="text" name="phone"  placeholder="Phone" required>
+                      <input class="form-control" type="text" name="phone"  placeholder="Phone" required value="{{Application.phone}}">
                     </div>
                   </div><!-- col-6 -->
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label">E-mail: <span class="tx-danger">*</span></label>
-                      <input class="form-control" type="e-mail" name="email" placeholder="Enter your E-mail here" required>
+                      <input class="form-control" type="e-mail" name="email" placeholder="Enter your E-mail here" value="{{Application.email}}" required>
                     </div>
                   </div><!-- col-6 -->
                 </div><!-- row -->
@@ -93,14 +93,14 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label">Place of Birth: <span class="tx-danger">*</span></label>
-                      <input class="form-control" type="text" name="pob" placeholder="Place of birth" required>                    
+                      <input class="form-control" type="text" name="pob" placeholder="Place of birth" value="{{Application.pob}}" required>                    
                   </div>
                   </div><!-- col-6 -->
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label">Nationality: <span class="tx-danger">*</span></label>
-                      <select name="nationality" class="form-control select2 countrylist">
-                        <option></option>
+                      <select name="nationality" class="form-control select2 countrylist" >
+                        <option value="{{Application.nationality}}" selected>{{Application.nationality}}</option>
                       </select>                   
                      </div>
                   </div><!-- col-6 --> 
@@ -136,7 +136,7 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label">Number of children:</label>
-                      <input class="form-control" type="text" name="children"  placeholder="Number of children" required>
+                      <input class="form-control" type="text" name="children"  placeholder="Number of children" value="{{Application.children}}" required>
                     </div>
                   </div><!-- col-6 -->
                 </div><!--row--> 
@@ -152,7 +152,7 @@
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label class="form-control-label">Address: <span class="tx-danger">*</span></label>
-                      <input class="form-control" type="text" name="address[box]"  placeholder="address" required>
+                      <input class="form-control" type="text" name="address[box]"  placeholder="address" value="{{Application.address.box}}" required>
                     </div>
                   </div><!-- col-12 -->
                 </div><!-- row -->
@@ -160,14 +160,14 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label">City: <span class="tx-danger">*</span></label>
-                      <input class="form-control" type="text" name="address[city]"  placeholder="City" required>
+                      <input class="form-control" type="text" name="address[city]"  placeholder="City" value="{{Application.address.city}}" required>
                     </div>
                   </div><!-- col-6 -->
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label">Country: <span class="tx-danger">*</span></label>  
                       <select name="address[country]" class="form-control select2 countrylist" >
-                      <option></option>>
+                      <option value="{{Application.address.country}}" selected>{{Application.address.country}}</option>>
                     </select>
                     </div>
                   </div><!-- col-6 -->
@@ -183,7 +183,7 @@
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label class="form-control-label">Name: <span class="tx-danger">*</span></label>
-                      <input class="form-control" type="text" name="guardian[name]"  placeholder="Name of Guardian" required>
+                      <input value="{{Application.guardian.name}}" class="form-control" type="text" name="guardian[name]"  placeholder="Name of Guardian" required>
                     </div>
                   </div><!-- col-12 -->
                 </div><!-- row -->
@@ -191,7 +191,7 @@
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label class="form-control-label">Address: <span class="tx-danger">*</span></label>
-                      <input class="form-control" type="text" name="guardian[address]"  placeholder="address" required>
+                      <input class="form-control" type="text" name="guardian[address]"  placeholder="address" value="{{Application.guardian.address}}" required>
                     </div>
                   </div><!-- col-12 -->
                 </div><!-- row -->
@@ -199,13 +199,13 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label">Phone: <span class="tx-danger">*</span></label>
-                      <input class="form-control" type="text" name="guardian[phone]"  placeholder="Phone" required>
+                      <input class="form-control" type="text" name="guardian[phone]"  placeholder="Phone" value="{{Application.guardian.phone}}" required>
                     </div>
                   </div><!-- col-6 -->
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label">Occupation: <span class="tx-danger">*</span></label>
-                      <input class="form-control" type="text" name="guardian[occupation]"  placeholder="Occupation" required>
+                      <input class="form-control" type="text" name="guardian[occupation]"  placeholder="Occupation" value="{{Application.guardian.occupation}}" required>
                     </div>
                   </div><!-- col-6 -->
                 </div><!-- row -->          
@@ -235,12 +235,13 @@
                 <h4>Add Results</h4>
                <div class="repeater"> 
                 <div data-repeater-list="results" >
+                    {{#each Application.results}}
                 <div class="data-repeater-item row mg-b-10 mg-t-20 ">
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label class="form-control-label">School: <span class="tx-danger">*</span></label>
                       <select name="results[school]" class="form-control select2 schoolList" data-placeholder="Select School">
-                        <option></option>
+                        <option value="{{this.school}}" selected>{{this.school}}</option>
                       </select>    
                     </div>
                   </div><!-- col-12 -->
@@ -249,7 +250,7 @@
                   <div class="col-lg-12">
                     <div class="form-group">
                       <label class="form-control-label">Index Number: <span class="tx-danger">*</span></label>
-                      <input name="results[indexNumber]" class="form-control" type="text" name="Index_num"  placeholder="Index Number" required>
+                      <input name="results[indexNumber]" class="form-control" type="text" name="Index_num"  placeholder="Index Number" value="{{this.indexNumber}}" required>
                     </div>
                   </div><!-- col-12 -->
                 </div><!-- row -->
@@ -263,7 +264,7 @@
                             <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
                           </div>
                         </div>
-                        <input name="results[yearStarted]" type="text" class="form-control fc-datepicker" placeholder="MM/DD/YYYY">
+                        <input name="results[yearStarted]" type="text" class="form-control fc-datepicker" placeholder="MM/DD/YYYY" value="{{this.yearStarted}}">
                       </div>
                     </div>
                   </div><!-- col-6 -->
@@ -276,11 +277,13 @@
                             <i class="icon ion-calendar tx-16 lh-0 op-6"></i>
                           </div>
                         </div>
-                        <input name="results[yearCompleted]" type="text" class="form-control fc-datepicker" placeholder="MM/DD/YYYY">
+                        <input name="results[yearCompleted]" type="text" class="form-control fc-datepicker" placeholder="MM/DD/YYYY" value="{{this.yearCompleted}}">
                       </div>
                   </div>
                   </div><!-- col-6 -->
                 </div><!-- row -->   
+                        {{/each}}    
+
 
                 <div class="data-repeater-item row mg-b-10 ">
                   <div class="col-md-3">
@@ -342,7 +345,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut iaculis augue. Phasellus in semper dui, vitae venenatis nibh. Fusce mauris tortor, euismod euismod accumsan eget, finibus vel urna. Vestibulum molestie nec nisl et porttitor. Praesent fermentum ante vel urna ultrices molestie. Suspendisse facilisis quam feugiat nunc consectetur facilisis. Sed tristique neque lectus, ut consequat odio mattis dapibus. Sed volutpat imperdiet ipsum, blandit auctor sem ultricies non. Fusce quis ultrices dui.</p>
                 <p>By entering my name, I hereby declare that all information provided are true and certified.</p>
                 <div class="form-group">
-                  <input class="form-control" type="text" name="signature"  placeholder="Full Name" required>
+                  <input class="form-control" type="text" name="signature"  placeholder="Full Name" value="{{Application.signature}}" required> 
                 </div>
               </section>
 
